@@ -1,0 +1,24 @@
+---
+object_type: instance
+version: 1.0
+object:
+  attributes:
+    display_name: 
+    name: CreateProject
+    inherits: 
+    description: 
+  fields:
+  - cluster_url:
+      value: https://openshift.kenscloud.io
+  - no_verify_ssl:
+      value: 'true'
+  - client_cert_location:
+      value: "/root/.pki/hamastercert.pem"
+  - client_key_location:
+      value: "/root/.pki/hamasterkey.pem"
+  - client_ca_cert_location:
+      value: "/root/.pki/hamasterca.pem"
+  - pretty:
+      value: 'true'
+  - meth1:
+      value: create_project
