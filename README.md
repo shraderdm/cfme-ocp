@@ -175,10 +175,12 @@ Save
 2. Clone the repository
 
 **ZIP the Repository**
+
 1. In your file system, navigate to you cloned folder
 2. Use your favorite archive utility to zip the POC folder as a **ZIP** archive
 
 **Import the Model**
+
 1. In CFME, navigate to *Automate --> Import / Export*
 2. In the *Import Datastore Classes* dialog, click *Choose File*
 3. In the file choose, find and select the ZIP file you created
@@ -187,6 +189,7 @@ Save
 6. Click *Commit*
 
 **Enable the Model**
+
 1. Navigate to *Automate --> Explorer*
 2. In the tree select *POC*
 3. Click on *Configuration* in the button bar
