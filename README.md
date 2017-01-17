@@ -147,7 +147,8 @@ Each of the above tags get applied to a group.  Groups are configured under **Ac
 
 Under **Groups** select the group to which to apply the tags.  Then go to **Policy** at the top and select the *Edit <Company> Tags for this Group*.
 
-#### Creating the Service Dialog
+### Automation Configuration
+#### Creating the Custom Service Dialog
 The dialog being created will resemble the web form presented when one provisions a new project through the OpenShift web interface.
 * Automate --> Customization --> Service Dialogs
 
@@ -165,4 +166,4 @@ Name this the *project-request-dialog*.  Give it a *Submit* and *Cancel* button.
 | Project Display Name | option_0_display_name  | | Text Box | No | |
 | Project Description | option_0_project_description | | Text Area Box | No |  |
 
-4. Save
+Save
