@@ -167,3 +167,28 @@ Name this the *project-request-dialog*.  Give it a *Submit* and *Cancel* button.
 | Project Description | option_0_project_description | | Text Area Box | No |  |
 
 Save
+
+#### Importing the Automate model
+**Download the Model**
+
+1. Navigate to https://github.com/kevensen/cfme-ocp
+2. Clone the repository
+
+**ZIP the Repository**
+1. In your file system, navigate to you cloned folder
+2. Use your favorite archive utility to zip the POC folder as a **ZIP** archive
+
+**Import the Model**
+1. In CFME, navigate to *Automate --> Import / Export*
+2. In the *Import Datastore Classes* dialog, click *Choose File*
+3. In the file choose, find and select the ZIP file you created
+4. Click *Upload*
+5. On the next screen, the only option to change is the *Toggle All/None* to ensure that all components are selected.  Leave defaults for the other options.
+6. Click *Commit*
+
+**Enable the Model**
+1. Navigate to *Automate --> Explorer*
+2. In the tree select *POC*
+3. Click on *Configuration* in the button bar
+4. Click *Edit this Domain*
+5. Check the *Enabled Box* if it is not enabled
