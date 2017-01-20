@@ -3,7 +3,7 @@
 #
 require 'rest-client'
 require 'json'
-require 'ocp'
+require 'kubeclient'
 
 task = $evm.root["service_template_provision_task"]
 dialog_options = task.dialog_options
@@ -20,7 +20,7 @@ $evm.log("info"," Detected requester is #{user.name}")
 #Get the user's current group
 group = user.current_group
 
-$evm.log("info"," Detected requester's group is #{group}")
+$evm.log("info"," Detected requester's group is #{group.inspect}")
 
 token = $evm.object['token']
 cluster_url = $evm.object['cluster_url']
@@ -34,20 +34,29 @@ client_cert_location = $evm.object['client_cert_location']
 client_key_location = $evm.object['client_key_location']
 client_ca_cert_location = $evm.object['client_ca_cert_location']
 
-cluster_master = cluster_url + ":" + cluster_api_port.to_s
+cluster_master = cluster_url + ":" + cluster_api_port.to_s + "/api"
+$evm.log("info"," GOT HERE 1")
+ssl_options = {
+  client_cert: OpenSSL::X509::Certificate.new(File.read(client_cert_location)),
+  client_key:  OpenSSL::PKey::RSA.new(File.read(client_key_location)),
+  ca_file:     client_ca_cert_location,
+  verify_ssl: OpenSSL::SSL::VERIFY_NONE }
 
-quota = ResourceQuota.new(project_name)
-quota.setup(cluster_master, no_verify_ssl,
-                              pretty, debug, token,
-  							  client_cert_location, 
-  							  client_key_location,
-                              client_ca_cert_location)
-resp = quota.create_resource_quota(project_name,
-  group.tags("quota_ocp_pods")[0],
-  group.tags("quota_ocp_rc")[0],
-  group.tags("quota_ocp_services")[0],
-  group.tags("quota_ocp_secrets")[0],
-  group.tags("quota_ocp_pvc")[0])
+
+client = Kubeclient::Client.new cluster_master, "v1", ssl_options: ssl_options
+client.discover
+resource_quota = Kubeclient::ResourceQuota.new
+resource_quota.metadata = {}
+resource_quota.metadata.name = group.description.gsub!(/[^0-9A-Za-z]/, '') + "quota"
+resource_quota.metadata.namespace = project_name
+resource_quota.spec = {}
+resource_quota.spec.hard = {}
+resource_quota.spec.hard.pods = group.tags("quota_ocp_pods")[0]
+resource_quota.spec.hard.replicationcontrollers = group.tags("quota_ocp_rc")[0]
+resource_quota.spec.hard.services = group.tags("quota_ocp_services")[0]
+resource_quota.spec.hard.persistentvolumeclaims = group.tags("quota_ocp_pvc")[0]
+resource_quota.spec.hard.secrets = group.tags("quota_ocp_secrets")[0]
+resp = client.create_resource_quota resource_quota
 
 $evm.log("info","Response => #{resp}")
 

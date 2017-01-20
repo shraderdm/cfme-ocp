@@ -9,14 +9,14 @@ object:
     description: 
   fields:
   - cluster_url:
-      value: https://openshift.kenscloud.io
+      value: https://openshift.clustera.ocp.kenscloud.io
   - no_verify_ssl:
       value: 'true'
   - client_cert_location:
-      value: "/root/.pki/hamastercert.pem"
+      value: "/root/clustera/admin.crt"
   - client_key_location:
-      value: "/root/.pki/hamasterkey.pem"
+      value: "/root/clustera/admin.key"
   - client_ca_cert_location:
-      value: "/root/.pki/hamasterca.pem"
+      value: "/root/clustera/admin-ca.crt"
   - meth1:
       value: project_request_validation

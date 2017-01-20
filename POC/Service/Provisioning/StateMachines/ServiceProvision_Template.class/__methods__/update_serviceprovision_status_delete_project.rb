@@ -16,5 +16,5 @@ if $evm.root['ae_result'] == 'ok' || $evm.root['ae_result'] == 'error'
 end
 
 $evm.root['ae_result'] = 'finished'
+$evm.root["miq_request"].deny("admin", "Failed to complete")
 
-exit MIQ_ABORT

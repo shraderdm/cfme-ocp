@@ -2,7 +2,7 @@
 # Description: This method is executed when no specific method is specified
 #
 
-require 'ocp'
+require 'kubeclient'
 
 $evm.log("info", "--- Entering Default Container Method ---")
 
