@@ -7,4 +7,4 @@ This relies on the [Kubeclient Ruby Gem](https://github.com/abonas/kubeclient).
 
 If you wish to checkout the upstream project for CloudForms, take a look at [ManageIQ](http://manageiq.org/).
 
-Documentation is located in the [docs folder](https://github.com/kevensen/cfme-ocp/docs).
+Documentation is located in the [docs folder](https://github.com/kevensen/cfme-ocp/tree/master/docs).
