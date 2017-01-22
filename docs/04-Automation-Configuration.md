@@ -73,8 +73,8 @@ These steps are optional and are only required if you do not have a catalog you 
 2. With the *Catalog Items* accordion open, choose the desired catalog
 3. Click *Configuration --> Add a New Catalog Item"* in the button bar
 4. With the catalog item type, choose *Generic*
-5. The name will be *OCP Project Request*
-6. The description will be *OCP Project Request*
+5. The name will be *Project Request*
+6. The description will be *Project Request*
 7. In *Catalog*, choose your desired catalog
 8. In *Dialog*, choose the dialog you created earlier
 9. For *Provisioning Entry Point State Machine (NS/Cls/Inst)* choose /POC/Service/Provisioning/StateMachines/ServiceProvision_Template/ProjectRequestItemInitialization
