@@ -58,8 +58,8 @@ Save
  * CreateProjectQuota
  * DeleteProject
  * ProjectRequestValidation
- 4. Under *Datastore*, navigate to the *POC/Service/Provisioning/Email* class
- 5. For each of the following instances, update the instance fields by navigating to *Configuration* and *Edit the Instance* in the button bar.
+4. Under *Datastore*, navigate to the *POC/Service/Provisioning/Email* class
+5. For each of the following instances, update the instance fields by navigating to *Configuration* and *Edit the Instance* in the button bar.
  * .missing
  * ProjectRequest_Pending_Approver
  * ProjectRequest_Pending_User
