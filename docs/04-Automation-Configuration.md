@@ -58,6 +58,15 @@ Save
  * CreateProjectQuota
  * DeleteProject
  * ProjectRequestValidation
+4. Under *Datastore*, navigate to the *POC/Service/Provisioning/Email* class
+5. For each of the following instances, update the instance fields by navigating to *Configuration* and *Edit the Instance* in the button bar.
+ * .missing
+ * ProjectRequest_Pending_Approver
+ * ProjectRequest_Pending_User
+ * ServiceProvision_Complete
+ * ServiceTemplateProvisionRequest_Approved
+ * ServiceTemplateProvisionRequest_Denied
+ * ServiceTemplateProvisionRequest_Pending
 
 ### Create a Service Catalog
 
@@ -73,8 +82,8 @@ These steps are optional and are only required if you do not have a catalog you 
 2. With the *Catalog Items* accordion open, choose the desired catalog
 3. Click *Configuration --> Add a New Catalog Item"* in the button bar
 4. With the catalog item type, choose *Generic*
-5. The name will be *OCP Project Request*
-6. The description will be *OCP Project Request*
+5. The name will be *Project Request*
+6. The description will be *Project Request*
 7. In *Catalog*, choose your desired catalog
 8. In *Dialog*, choose the dialog you created earlier
 9. For *Provisioning Entry Point State Machine (NS/Cls/Inst)* choose /POC/Service/Provisioning/StateMachines/ServiceProvision_Template/ProjectRequestItemInitialization
