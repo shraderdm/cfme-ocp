@@ -17,7 +17,7 @@ $evm.log("info", "========= ADDING USER TO PROJECT #{project_name} =========")
 user = task.miq_request.requester
 raise "User not specified" if user.nil?
 
-$evm.log("info"," Detected requester is #{user.inspect}")
+$evm.log("info"," Detected requester is #{user}")
 
 #Get the user's current group
 group = user.current_group

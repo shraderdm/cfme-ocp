@@ -35,7 +35,6 @@ client_key_location = $evm.object['client_key_location']
 client_ca_cert_location = $evm.object['client_ca_cert_location']
 
 cluster_master = cluster_url + ":" + cluster_api_port.to_s + "/api"
-$evm.log("info"," GOT HERE 1")
 ssl_options = {
   client_cert: OpenSSL::X509::Certificate.new(File.read(client_cert_location)),
   client_key:  OpenSSL::PKey::RSA.new(File.read(client_key_location)),
